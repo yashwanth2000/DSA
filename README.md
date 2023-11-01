@@ -13,20 +13,13 @@ This repository contains a collection of Data Structures and Algorithms (DSA) pr
 
 ## Problem Sources
 
-Most of the programs are solutions to LeetCode problems and classic DSA textbook examples.
+The programs in this repository are primarily solutions to problems sourced from the following :
 
-## Programming Language
+[DSA Sheet](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/)
 
-All programs are written in Java.
+[LeetCode](https://leetcode.com/)
+
 
 ## Important Notes
 
 To run these programs, ensure you have Java installed on your system. Please refer to the specific program's README file for usage instructions.
-
-## License
-
-This repository is licensed under the MIT License.
-
-## Contributions
-
-Contributions and improvements are welcome! If you'd like to contribute, feel free to fork this repository, make your changes, and submit a pull request.
