@@ -13,7 +13,7 @@ This repository contains a collection of Data Structures and Algorithms (DSA) pr
 
 ## Problem Sources
 
-The programs in this repository are primarily solutions to problems sourced from the following :
+I'm actively working on Data Structures and Algorithms (DSA) questions from Striver's A2Z DSA Sheet and LeetCode.
 
 [DSA Sheet](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/)
 
