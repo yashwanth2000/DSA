@@ -3,9 +3,10 @@
 This repository contains a collection of Data Structures and Algorithms (DSA) programs implemented in Java. It covers a variety of topics. The programs are designed to help you understand and practice key DSA concepts and are suitable for educational purposes.
 ## Table of Contents
 
-- Patterns
 - Arrays
+- bitManiplation
 - Math
+- Patterns
 - Strings
 - Sorting Algorithms
 - Searching Algorithms
