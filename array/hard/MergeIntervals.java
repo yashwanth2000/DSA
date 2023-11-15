@@ -21,12 +21,14 @@ import java.util.Arrays;
 	TC : O(NLOGN) for sorting an array and O(N) for loop
 	SC : O(N)
 	
-	Approach : the code takes a set of time intervals, like appointments, 
-	and combines overlapping appointments into single blocks of time. 
-	This way, you get a list of non-overlapping time slots representing when you're available. 
-	The code does this by sorting the intervals, comparing them, and merging overlapping ones. 
-	Finally, it returns a list of these merged time slots.
-	
+	Approach : The provided code merges overlapping intervals within a given array of intervals. 
+	 It first sorts the intervals based on their starting times. Then, it iterates through the sorted intervals, 
+	 merging overlapping ones and adding non-overlapping ones to a new list. The key idea is to compare each interval with the last merged interval; 
+	 if there's an overlap, the intervals are merged by updating the end time, otherwise, the current interval is added to the merged list. 
+	 This process results in a list of non-overlapping intervals covering the entire input set. 
+  	The time complexity is influenced by the sorting step, making it O(n log n), where n is the number of intervals, 
+   	and the space complexity is O(n) due to the additional space needed to store the merged intervals.
+		
  *
  */
 public class MergeIntervals {
@@ -42,22 +44,31 @@ public class MergeIntervals {
 	}
 
 	private static int[][] merge(int[][] intervals) {
-		//Arrays.sort(intervals,Comparator.comparingInt(a -> a[0]));
-		
-		int[][] result = new int[intervals.length][2];
-		int count = 0;
-		
-		for(int i=0;i<intervals.length;i++) {
-			if(count == 0 || intervals[i][0] > result[count - 1][1]) {
-				result[count][0] = intervals[i][1];
-				count++;
-			}
-			else {
-				result[count - 1][i] = Math.max(result[count - 1][1], intervals[i][1]);
-			}
-		}
-		
-		return Arrays.copyOf(result, count);
+		if (intervals == null || intervals.length <= 1) {
+            		return intervals;
+        	}
+
+	        // Sort intervals based on start times
+	        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+
+	        List<int[]> merged = new ArrayList<>();
+	        merged.add(intervals[0]);
+	
+	        for (int i = 1; i < intervals.length; i++) {
+	            int[] current = intervals[i];
+	            int[] previous = merged.get(merged.size() - 1);
+	
+	            // Check for overlap
+	            if (current[0] <= previous[1]) {
+	                // Merge intervals
+	                previous[1] = Math.max(current[1], previous[1]);
+	            } else {
+	                // No overlap, add current interval to the merged list
+	                merged.add(current);
+	            }
+	        }
+	
+	        return merged.toArray(new int[merged.size()][]);
 	}
 
 }
