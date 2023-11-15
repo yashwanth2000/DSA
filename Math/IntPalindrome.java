@@ -17,6 +17,10 @@ public class IntPalindrome {
 	}
 
 	public static boolean isPalindrome(int number) {
+		if(number < 0) return false;
+
+		if(number ==0) return true;
+		
 		int palindrome = number;
 		int reverse = 0;
 		
