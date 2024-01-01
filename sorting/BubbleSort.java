@@ -20,8 +20,6 @@ public class BubbleSort {
 	}
 
 	private static void bubblesort(int[] arr) {
-		
-		
 		boolean swappesSomething = true;
 		while (swappesSomething) {
 			swappesSomething = false;
