@@ -1,11 +1,9 @@
 /*
-
 LeetCode Id : 177
 ------------------------
 Problem Description
 
 Table: Employee
-
 +-------------+------+
 | Column Name | Type |
 +-------------+------+
@@ -62,9 +60,13 @@ insert into Employee (id, salary) values ('2', '200')
 insert into Employee (id, salary) values ('3', '300')
 ---------------------------------------------------------------------------------------------------
 
+Explanation:
+The function `getNthHighestSalary(N)` returns the Nth highest salary from the `Employee` table.
+It first subtracts 1 from `N` because SQL `LIMIT` uses **zero-based indexing**—so to get the Nth item, we skip `N-1` rows.
+Then it selects distinct salaries in descending order and uses `LIMIT N,1` to fetch exactly that salary.
+If `N` is larger than the number of distinct salaries, it returns `NULL`.
 */
 
-# Write your MySQL query statement below
 CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
 BEGIN
      SET N = N - 1;
