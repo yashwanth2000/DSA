@@ -13,13 +13,9 @@ Each row of this table contains information about the salary of an employee.
  
 
 Write a solution to find the second highest salary from the Employee table. If there is no second-highest salary, return null (return None in Pandas).
-
 The result format is in the following example.
 
- 
-
 Example 1:
-
 Input: 
 Employee table:
 +----+--------+
@@ -36,7 +32,6 @@ Output:
 | 200                 |
 +---------------------+
 Example 2:
-
 Input: 
 Employee table:
 +----+--------+
@@ -52,6 +47,13 @@ Output:
 +---------------------+
 */
 
-
-/*Write your MySQL query statement below */
+/*SQL query*/
 select MAX(salary) as SecondHighestSalary from employee where salary < (select MAX(salary) from employee);
+
+/*OR */
+SELECT (
+    SELECT DISTINCT salary
+    FROM Employee
+    ORDER BY salary DESC
+    LIMIT 1 OFFSET 1
+) AS SecondHighestSalary;
